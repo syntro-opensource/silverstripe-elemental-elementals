@@ -1,3 +1,3 @@
-<div class="$Spacing">
+<div class="spacer spacing--$Spacing $Spacing">
 
 </div>

@@ -1,0 +1,14 @@
+---
+Name: silverstripe-elemental-elementals
+---
+DNADesign\Elemental\Models\BaseElement:
+  extensions:
+    - Syntro\SilverstripeElementalElementals\Extension\SpacingExtension
+  spacing_before:
+    sm: Small spacing
+    md: Medium spacing
+    lg: Large spacing
+  spacing_after:
+    sm: Small spacing
+    md: Medium spacing
+    lg: Large spacing
