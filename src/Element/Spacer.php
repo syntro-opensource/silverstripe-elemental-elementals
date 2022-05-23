@@ -46,6 +46,8 @@ class Spacer extends BaseElement
      */
     private static $inline_editable = true;
 
+    private static $allow_title_customization = false;
+
     /**
      * Display a show title button
      *

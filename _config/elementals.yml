@@ -4,6 +4,7 @@ Name: silverstripe-elemental-elementals
 DNADesign\Elemental\Models\BaseElement:
   extensions:
     - Syntro\SilverstripeElementalElementals\Extension\SpacingExtension
+    - Syntro\SilverstripeElementalElementals\Extension\ElementTitleExtension
   spacing_before:
     sm: Small spacing
     md: Medium spacing
@@ -12,3 +13,4 @@ DNADesign\Elemental\Models\BaseElement:
     sm: Small spacing
     md: Medium spacing
     lg: Large spacing
+  allow_title_customization: true
