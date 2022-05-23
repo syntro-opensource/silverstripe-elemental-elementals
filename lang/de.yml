@@ -1,0 +1,7 @@
+de:
+  Syntro\SilverstripeElementalElementals\Element\Spacer:
+    spacing_options:p-1: Sehr klein
+    spacing_options:p-2: Klein
+    spacing_options:p-3: Mittel
+    spacing_options:p-4: Gross
+    spacing_options:p-5: Sehr gross
