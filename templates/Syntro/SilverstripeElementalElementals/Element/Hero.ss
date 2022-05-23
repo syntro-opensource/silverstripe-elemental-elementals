@@ -9,7 +9,13 @@
     </div>
     <% if $Buttons.count %>
         <div class="hero__buttonlist">
-            Buttons
+            <% loop Buttons %>
+                <% if Link %>
+                    <% with Link %>
+                    <a {$IDAttr} href="{$LinkURL}" class="btn btn-$Up.Style m-2" {$TargetAttr}>$Title</a>
+                    <% end_with %>
+                <% end_if %>
+            <% end_loop %>
         </div>
     <% end_if %>
 </div>

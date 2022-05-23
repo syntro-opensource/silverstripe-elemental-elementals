@@ -79,28 +79,35 @@ class Button extends BaseItem
             'Style',
             'Title',
         ]);
-
-        $fields->addFieldsToTab(
-            'Root.Main',
-            [
-                $linkField = LinkField::create(
-                    'Link',
-                    _t(__CLASS__ . '.LINKTITLE', 'Link'),
-                    $this
-                ),
+        if (count($this->getTranslatedConfigArray('styles'))) {
+            $fields->addFieldToTab(
+                'Root.Main',
                 $styleField = DropdownField::create(
                     'Style',
                     _t(__CLASS__ . '.STYLETITLE', 'Style'),
                     $this->getTranslatedConfigArray('styles')
                 )
-            ],
+            );
+        }
+        $fields->addFieldToTab(
+            'Root.Main',
+            $linkField = LinkField::create(
+                'Link',
+                _t(__CLASS__ . '.LINKTITLE', 'Link'),
+                $this
+            )
         );
 
         return $fields;
     }
 
+    /**
+     * getTitle - pipe the link-title
+     *
+     * @return string
+     */
     public function getTitle()
     {
-        return $this->LinkID ? $this->Link->Title : _t(__CLASS__ . '.UNTITLEDBUTTON', 'Untitled Button');
+        return isset($this->Link->Title) ? $this->Link->Title : _t(__CLASS__ . '.UNTITLEDBUTTON', 'Untitled Button');
     }
 }
