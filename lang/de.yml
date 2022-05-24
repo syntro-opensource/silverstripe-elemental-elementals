@@ -1,4 +1,14 @@
 de:
+  Syntro\SilverstripeElementalElementals\BootstrapConfig:
+    COLOR: Farbe
+    LINKCOLOR: Linkfarbe
+    FONTSTYLE: Schriftstil
+    NAME:H6: Überschrift 6
+    NAME:H5: Überschrift 5
+    NAME:H4: Überschrift 4
+    NAME:H3: Überschrift 3
+    NAME:H2: Überschrift 2
+    NAME:H1: Überschrift 1
   Syntro\SilverstripeElementalElementals\Element\Spacer:
     spacing_options:p-1: Sehr klein
     spacing_options:p-2: Klein

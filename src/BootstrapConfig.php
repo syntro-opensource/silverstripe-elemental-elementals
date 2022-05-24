@@ -26,7 +26,14 @@ class BootstrapConfig
       * @config
       * @var bool
       */
-      private static $enable_lead_format = true;
+     private static $enable_lead_format = true;
+
+    /**
+     * enable the heading format classes (.h1 - .h6) in the editor
+     * @config
+     * @var bool
+     */
+    private static $enable_headings_format = true;
 
     /**
      * defines the available display formats for the editor
@@ -34,12 +41,12 @@ class BootstrapConfig
      * @var string[]
      */
     private static $display_classes = [
-        'display-1' => 'Display 1',
-        'display-2' => 'Display 2',
-        'display-3' => 'Display 3',
-        'display-4' => 'Display 4',
+        'display-6' => 'Display 6',
         'display-5' => 'Display 5',
-        'display-6' => 'Display 6'
+        'display-4' => 'Display 4',
+        'display-3' => 'Display 3',
+        'display-2' => 'Display 2',
+        'display-1' => 'Display 1'
     ];
 
     /**
@@ -77,16 +84,27 @@ class BootstrapConfig
     {
         $formats = static::config()->get('display_classes');
         $editorFormats = [];
-        $selectors = 'a,p,h1,h2,h3,h4,h5,h6,td,th,li';
+        $selectors = 'p,h1,h2,h3,h4,h5,h6,td,th,li,a';
         if (static::config()->get('enable_small_format')) {
-            $editorFormats[] = ['title' => 'Small', 'selectors' => $selectors, 'classes' => 'small'];
+            $editorFormats[] = ['title' => 'Small', 'selector' => $selectors, 'classes' => 'small'];
         }
         if (static::config()->get('enable_lead_format')) {
-            $editorFormats[] = ['title' => 'Lead', 'selectors' => $selectors, 'classes' => 'lead'];
+            $editorFormats[] = ['title' => 'Lead', 'selector' => $selectors, 'classes' => 'lead'];
+        }
+        if (static::config()->get('enable_headings_format')) {
+            $editorFormats[] = ['title' => _t(__CLASS__ . '.NAME:H6', 'Heading 6'), 'selector' => $selectors, 'classes' => 'h6'];
+            $editorFormats[] = ['title' => _t(__CLASS__ . '.NAME:H5', 'Heading 5'), 'selector' => $selectors, 'classes' => 'h5'];
+            $editorFormats[] = ['title' => _t(__CLASS__ . '.NAME:H4', 'Heading 4'), 'selector' => $selectors, 'classes' => 'h4'];
+            $editorFormats[] = ['title' => _t(__CLASS__ . '.NAME:H3', 'Heading 3'), 'selector' => $selectors, 'classes' => 'h3'];
+            $editorFormats[] = ['title' => _t(__CLASS__ . '.NAME:H2', 'Heading 2'), 'selector' => $selectors, 'classes' => 'h2'];
+            $editorFormats[] = ['title' => _t(__CLASS__ . '.NAME:H1', 'Heading 1'), 'selector' => $selectors, 'classes' => 'h1'];
         }
         foreach ($formats as $key => $value) {
-            $editorFormats[] = ['title' => "$value", 'selectors' => $selectors, 'classes' => "$key"];
+            $editorFormats[] = ['title' => "$value", 'selector' => $selectors, 'classes' => "$key"];
         }
+        // throw new \Exception(json_encode($editorFormats), 1);
+
+        return $editorFormats;
     }
 
     /**
@@ -102,10 +120,28 @@ class BootstrapConfig
         $selectors = 'p,h1,h2,h3,h4,h5,h6,td,th,li';
         $inline = 'span';
         foreach ($utilityColors as $key => $value) {
-            $editorFormats[] = ['title' => "$value", 'inline' => "$inline", 'selectors' => $selectors, 'classes' => "$key"];
+            $editorFormats[] = ['title' => "$value", 'inline' => "$inline", 'selector' => $selectors, 'classes' => "text-$key"];
         }
         foreach ($colors as $key => $value) {
-            $editorFormats[] = ['title' => "$value", 'inline' => "$inline", 'selectors' => $selectors, 'classes' => "$key"];
+            $editorFormats[] = ['title' => "$value", 'inline' => "$inline", 'selector' => $selectors, 'classes' => "text-$key"];
         }
+        return $editorFormats;
+    }
+
+    /**
+     * getEditorFontFormats - returns the
+     *
+     * @return array
+     */
+    public static function getEditorLinkColorFormats()
+    {
+        $colors = static::config()->get('colors');
+        $utilityColors = static::config()->get('utility_colors');
+        $editorFormats = [];
+        $selectors = 'a';
+        foreach ($colors as $key => $value) {
+            $editorFormats[] = ['title' => "$value", 'selector' => $selectors, 'classes' => "link-$key"];
+        }
+        return $editorFormats;
     }
 }
