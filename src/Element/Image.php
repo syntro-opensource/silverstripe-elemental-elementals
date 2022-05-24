@@ -110,7 +110,7 @@ class Image extends BaseElement
             )
         );
         $uploadfield
-            ->setFolderName('Uploades/Elements/Image');
+            ->setFolderName('Uploads/Elements/Image');
         // $fields->addFieldToTab(
         //     'Root.Main',
         //     $aspectField = DropdownField::create(

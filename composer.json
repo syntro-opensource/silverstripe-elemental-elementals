@@ -16,5 +16,13 @@
         "silverstripe/framework": "^4",
         "syntro/silverstripe-elemental-baseitem": "^1",
         "unclecheese/display-logic": "^2"
-    }
+    },
+    "autoload": {
+        "psr-4": {
+            "Syntro\\SilverstripeElementalElementals\\": "src/",
+            "Syntro\\SilverstripeElementalElementals\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
