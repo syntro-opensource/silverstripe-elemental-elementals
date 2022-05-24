@@ -101,6 +101,9 @@ class Image extends BaseElement
      */
     public function getCMSFields()
     {
+        $fields->removeByName([
+            'AspectRatio'
+        ]);
         $fields = parent::getCMSFields();
         $fields->addFieldToTab(
             'Root.Main',
