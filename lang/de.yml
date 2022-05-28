@@ -31,6 +31,7 @@ de:
     TIITLEEXTRACLASSTITLE: Extraklassen für Titel
     TITLESETTINGS: Titeleinstellungen
   Syntro\SilverstripeElementalElementals\Extension\SpacingExtension:
+    TOGGLETITLE: Abstände
     SPACINGBEFORETITLE: Abstand vor Block
     spacing_before:sm: Kleiner Abstand
     spacing_before:md: Mittlerer Abstand
