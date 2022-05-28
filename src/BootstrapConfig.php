@@ -3,6 +3,7 @@
 namespace Syntro\SilverstripeElementalElementals;
 
 use SilverStripe\Core\Config\Configurable;
+use Syntro\SilverstripeElementalElementals\Traits\TranslatableConfigArrays;
 
 /**
  * The bootstrap config allows the configuration of bootstrap specific
@@ -13,6 +14,7 @@ use SilverStripe\Core\Config\Configurable;
 class BootstrapConfig
 {
     use Configurable;
+    use TranslatableConfigArrays;
 
     /**
      * enable the 'small' format in the editor
@@ -76,7 +78,29 @@ class BootstrapConfig
     ];
 
     /**
-     * getEditorFontFormats - returns the
+     * if true, all frontend tables are wrapped in 'table-responsive' divs
+     * @config
+     * @var bool
+     */
+    private static  $wrap_tables = true;
+
+    /**
+     * defines the available table styles. thes can be triggered by adding
+     * classes in the HTMLEditor
+     * @config
+     * @var string[]
+     */
+    private static $table_styles = [
+        'table-borderless'          => 'Borderless Table',
+        'table-bordered'            => 'Bordered Table',
+        'table-striped'             => 'Striped Rows',
+        'table-striped-columns'     => 'Striped Columns',
+        'table-hover'               => 'Hoverable Rows',
+        'table-sm'                  => 'Small Table',
+    ];
+
+    /**
+     * getEditorFontFormats - returns the font formats for the tinymce editor
      *
      * @return array
      */
@@ -108,7 +132,7 @@ class BootstrapConfig
     }
 
     /**
-     * getEditorFontFormats - returns the
+     * getEditorFontFormats - returns the font color formats for the tinymce editor
      *
      * @return array
      */
@@ -129,7 +153,7 @@ class BootstrapConfig
     }
 
     /**
-     * getEditorFontFormats - returns the
+     * getEditorFontFormats - returns the link color formats for the tinymce editor
      *
      * @return array
      */
@@ -141,6 +165,33 @@ class BootstrapConfig
         $selectors = 'a';
         foreach ($colors as $key => $value) {
             $editorFormats[] = ['title' => "$value", 'selector' => $selectors, 'classes' => "link-$key"];
+        }
+        return $editorFormats;
+    }
+
+    /**
+     * addResponsiveTables - shorthand to check if tables should be wrapped in
+     * responsive divs
+     *
+     * @return bool
+     */
+    public static function addResponsiveTables()
+    {
+        return static::config()->get('wrap_tables');
+    }
+
+    /**
+     * getTableStyleFormats - returns the available table styles for the tinymce editor
+     *
+     * @return array
+     */
+    public static function getTableStyleFormats()
+    {
+        $styles = static::getTranslatedConfigArray('table_styles');
+        $editorFormats = [];
+        $selectors = 'table.table';
+        foreach ($styles as $key => $value) {
+            $editorFormats[] = ['title' => "$value", 'selector' => $selectors, 'classes' => "$key"];
         }
         return $editorFormats;
     }

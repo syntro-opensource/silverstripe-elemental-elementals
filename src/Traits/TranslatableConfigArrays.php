@@ -1,6 +1,7 @@
 <?php
 
 namespace Syntro\SilverstripeElementalElementals\Traits;
+use SilverStripe\Core\Config\Config;
 
 /**
  * Allows an object to read an array with options that point to
@@ -17,9 +18,9 @@ trait TranslatableConfigArrays
      * @param  string $configName the name of the config value to get
      * @return array
      */
-    function getTranslatedConfigArray(string $configName)
+    public static function getTranslatedConfigArray(string $configName)
     {
-        $values = $this->config()->get($configName);
+        $values = Config::inst()->get(static::class, $configName);
         if (!is_array($values)) {
             throw new \Exception("Config value '$configName' on ${__CLASS__} is not an array.", 1);
         }
@@ -38,9 +39,9 @@ trait TranslatableConfigArrays
      * @param  string $optionName the name of the option to get
      * @return null|string
      */
-    public function getTranslatedConfigArrayOption(string $configName, $optionName)
+    public static function getTranslatedConfigArrayOption(string $configName, $optionName)
     {
-        $array = $this->getTranslatedConfigArray($configName);
+        $array = static::getTranslatedConfigArray($configName);
         if (!isset($array[$optionName])) {
             return null;
         }

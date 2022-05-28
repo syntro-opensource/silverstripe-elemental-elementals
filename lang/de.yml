@@ -1,4 +1,7 @@
 de:
+  # ***********
+  # Config
+  # ***********
   Syntro\SilverstripeElementalElementals\BootstrapConfig:
     COLOR: Farbe
     LINKCOLOR: Linkfarbe
@@ -9,6 +12,37 @@ de:
     NAME:H3: Überschrift 3
     NAME:H2: Überschrift 2
     NAME:H1: Überschrift 1
+    TABLESTYLE: Tabellenstil
+    table_styles:table-borderless: Rahmenlose Tabelle
+    table_styles:table-bordered: Umrahmte Tabelle
+    table_styles:table-striped: Gestreifte Zeilen
+    table_styles:table-striped-columns: Gestreifte Spalten
+    table_styles:table-hover: Tabelle mit Hover-Effekt
+    table_styles:table-sm: Tabelle mit kleinem Abstand
+  # ***********
+  # Extensions
+  # ***********
+  Syntro\SilverstripeElementalElementals\Extension\ElementTitleExtension:
+    TIITLETAGTITLE: Titel Tag
+    TIITLEALIGNMENTTITLE: Titelausrichtung
+    TIITLEALIGNMENTSTART: Links
+    TIITLEALIGNMENTCENTER: Zentriert
+    TIITLEALIGNMENTEND: Rechts
+    TIITLEEXTRACLASSTITLE: Extraklassen für Titel
+    TITLESETTINGS: Titeleinstellungen
+  Syntro\SilverstripeElementalElementals\Extension\SpacingExtension:
+    SPACINGBEFORETITLE: Abstand vor Block
+    spacing_before:sm: Kleiner Abstand
+    spacing_before:md: Mittlerer Abstand
+    spacing_before:lg: Grosser Abstand
+    SPACINGAFTERTITLE: Abstand nach Block
+    spacing_after:sm: Kleiner Abstand
+    spacing_after:md: Mittlerer Abstand
+    spacing_after:lg: Grosser Abstand
+    NONE: Kein Abstand (oder eigene Klassen)
+  # ***********
+  # Elements
+  # ***********
   Syntro\SilverstripeElementalElementals\Element\Spacer:
     spacing_options:p-1: Sehr klein
     spacing_options:p-2: Klein

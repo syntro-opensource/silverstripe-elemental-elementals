@@ -1,0 +1,10 @@
+---
+Name: bootstrap-middlewares
+After:
+  - requestprocessors
+---
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Control\Director:
+    properties:
+      Middlewares:
+        BootstrapTableMiddleware: '%$Syntro\SilverstripeElementalElementals\Middleware\BootstrapTableMiddleware'

@@ -120,7 +120,7 @@ class Image extends BaseElement
         //     $aspectField = DropdownField::create(
         //         'AspectRatio',
         //         'Aspect Ratio',
-        //         $this->getTranslatedConfigArray('aspectratio_options')
+        //         static::getTranslatedConfigArray('aspectratio_options')
         //     ),
         // );
         // $aspectField->setEmptyString(_t(__CLASS__ . '.Select', 'No specific ratio (use image dimension)'));
@@ -144,7 +144,7 @@ class Image extends BaseElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        $blockSchema['content'] = $this->getTranslatedConfigArrayOption('aspectratio_options', $this->Spacing);
+        $blockSchema['content'] = static::getTranslatedConfigArrayOption('aspectratio_options', $this->Spacing);
         /** @var Image|null */
         $image = $this->Image();
         if ($image && $image->exists() && $image->getIsImage()) {

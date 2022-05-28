@@ -13,6 +13,9 @@ $style_formats = [
     ], [
         'title' => _t(BootstrapConfig::class . '.FONTSTYLE', 'Font Style'),
         'items' => BootstrapConfig::getEditorFontFormats()
+    ], [
+        'title' => _t(BootstrapConfig::class . '.TABLESTYLE', 'Table Styles'),
+        'items' => BootstrapConfig::getTableStyleFormats()
     ]
 ];
 
@@ -25,14 +28,19 @@ $formats['alignright'] = [
     [ 'selector' => 'p,h1,h2,h3,h4,h5,h6,td,th,li', 'classes' =>'text-end' ],
     [ 'selector' => 'div,ul,ol,table,img,figure', 'classes' =>'text-end' ]
 ];
-HtmlEditorConfig::get('cms')->setOption('formats', $formats);
 
 HtmlEditorConfig::get('cms')->insertButtonsAfter('formatselect', 'styleselect');
+HtmlEditorConfig::get('cms')->enablePlugins('hr');
+HtmlEditorConfig::get('cms')->insertButtonsAfter('sslink', 'hr');
 HtmlEditorConfig::get('cms')
+    // add the new formats
+    ->setOption('formats', $formats)
+    // configure htmleditor to correctly display style options
     ->setOption('importcss_append', true)
     ->setOption('style_formats_autohide', true)
     ->setOption('importcss_file_filter', 'dom.css')
-    ->setOption('style_formats', $style_formats);
-
-HtmlEditorConfig::get('cms')->enablePlugins('hr');
-HtmlEditorConfig::get('cms')->insertButtonsAfter('sslink', 'hr');
+    ->setOption('style_formats', $style_formats)
+    // add the default .table class to tables
+    ->setOption('table_default_attributes', [
+        'class' => 'table'
+    ]);

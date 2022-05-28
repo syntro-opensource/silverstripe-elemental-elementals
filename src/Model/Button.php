@@ -79,13 +79,13 @@ class Button extends BaseItem
             'Style',
             'Title',
         ]);
-        if (count($this->getTranslatedConfigArray('styles'))) {
+        if (count(static::getTranslatedConfigArray('styles'))) {
             $fields->addFieldToTab(
                 'Root.Main',
                 $styleField = DropdownField::create(
                     'Style',
                     _t(__CLASS__ . '.STYLETITLE', 'Style'),
-                    $this->getTranslatedConfigArray('styles')
+                    static::getTranslatedConfigArray('styles')
                 )
             );
         }

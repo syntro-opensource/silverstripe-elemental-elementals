@@ -90,7 +90,7 @@ class Spacer extends BaseElement
             $spacingField = DropdownField::create(
                 'Spacing',
                 'Spacing',
-                $this->getTranslatedConfigArray('spacing_options')
+                static::getTranslatedConfigArray('spacing_options')
             ),
         );
         return $fields;
@@ -113,7 +113,7 @@ class Spacer extends BaseElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        $blockSchema['content'] = $this->getTranslatedConfigArrayOption('spacing_options', $this->Spacing);
+        $blockSchema['content'] = static::getTranslatedConfigArrayOption('spacing_options', $this->Spacing);
         return $blockSchema;
     }
 
