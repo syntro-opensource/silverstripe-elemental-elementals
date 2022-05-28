@@ -1,0 +1,33 @@
+name: 🎭 Tests
+on:
+  push:
+    paths-ignore:
+      - .chglog/**
+      - .github/**
+      - '!.github/workflows/tests.yml'
+      - .editorconfig
+      - .gitattributes
+      - .gitignore
+      - .htaccess
+      - '**.md'
+    branches:
+      - master
+  pull_request:
+    paths-ignore:
+      - .chglog/**
+      - .github/**
+      - '!.github/workflows/tests.yml'
+      - .editorconfig
+      - .gitattributes
+      - .gitignore
+      - .htaccess
+      - '**.md'
+    branches:
+      - master
+
+jobs:
+  phpcs:
+    name: 🔮 PHPcs - src
+    uses: syntro-opensource/workflows/.github/workflows/silverstripe-phpcs.yml@master
+    with:
+      dir: src/
