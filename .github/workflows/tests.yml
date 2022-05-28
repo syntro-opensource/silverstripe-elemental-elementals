@@ -30,6 +30,10 @@ jobs:
     strategy:
       matrix:
         php_version: [ '7.4', '8.0' ]
+        silverstripe_version: [ '4.9', '4.10' ]
+        exclude:
+          - php_version: '8.0'
+            silverstripe_version: '4.9'
     container: syntrocontainer/silverstripe-dev:${{ matrix.php_version }}-apache-buster
     name: 🔺 PHPStan
     runs-on: ubuntu-latest
@@ -39,7 +43,7 @@ jobs:
       - name: Prep Module
         uses: syntro-opensource/workflows/actions/silverstripe-module-prep@master
         with:
-          silverstripe_version: '4.10'
+          silverstripe_version: ${{ matrix.silverstripe_version }}
       - name: Run PHPStan
         uses: syntro-opensource/workflows/actions/silverstripe-module-phpstan@master
         with:
