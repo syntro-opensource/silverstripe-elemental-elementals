@@ -1,0 +1,6 @@
+---
+Name: silverstripe-elemental-editor
+---
+SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
+  editor_css:
+    - 'syntro/silverstripe-elemental-elementals:client/css/editor-shim.css'

@@ -23,6 +23,11 @@
             "Syntro\\SilverstripeElementalElementals\\Tests\\": "tests/"
         }
     },
+    "extra": {
+        "expose": [
+            "client/css"
+        ]
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
