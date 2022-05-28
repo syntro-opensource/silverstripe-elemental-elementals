@@ -28,6 +28,7 @@ on:
 jobs:
   phpstan:
     name: 🔺 PHPStan
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: syntro-opensource/workflows/.github/actions/silverstripe-module-phpstan@master
