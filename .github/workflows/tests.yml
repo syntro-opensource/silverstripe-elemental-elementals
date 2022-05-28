@@ -27,11 +27,17 @@ on:
 
 jobs:
   phpstan:
+    strategy:
+      matrix:
+        php_version: [ '7.4', '8.0' ]
+    container: syntrocontainer/silverstripe-dev:${{ matrix.php_version }}-apache-buster
     name: 🔺 PHPStan
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - uses: syntro-opensource/workflows/.github/actions/silverstripe-module-phpstan@master
+        with:
+          dir: src/
   phpcs:
     name: 🔮 PHPcs - src
     uses: syntro-opensource/workflows/.github/workflows/silverstripe-phpcs.yml@master
