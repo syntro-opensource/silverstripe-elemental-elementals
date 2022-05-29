@@ -52,7 +52,7 @@ jobs:
         uses: syntro-opensource/workflows/actions/silverstripe-module-prep@master
         with:
           silverstripe_version: ${{ matrix.silverstripe_version }}
-      - name: Run PHPStan
+      - name: Run PHPUnit
         uses: syntro-opensource/workflows/actions/silverstripe-module-phpunit@master
         with:
           dir: tests/
