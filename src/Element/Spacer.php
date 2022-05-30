@@ -122,5 +122,4 @@ class Spacer extends BaseElement
         $blockSchema['content'] = static::getTranslatedConfigArrayOption('spacing_options', $this->Spacing);
         return $blockSchema;
     }
-
 }

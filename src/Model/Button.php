@@ -29,7 +29,7 @@ class Button extends BaseItem
      * @config
      * @var array
      */
-     private static $styles = [];
+    private static $styles = [];
 
 
      /**
@@ -37,7 +37,7 @@ class Button extends BaseItem
       * @config
       * @var array
       */
-     private static $db = [
+    private static $db = [
          'Style' => 'Varchar',
      ];
 

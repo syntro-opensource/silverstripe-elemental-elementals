@@ -21,14 +21,14 @@ class BootstrapConfig
      * @config
      * @var bool
      */
-     private static $enable_small_format = true;
+    private static $enable_small_format = true;
 
      /**
       * enable the 'lead' format in the editor
       * @config
       * @var bool
       */
-     private static $enable_lead_format = true;
+    private static $enable_lead_format = true;
 
     /**
      * enable the heading format classes (.h1 - .h6) in the editor
@@ -82,7 +82,7 @@ class BootstrapConfig
      * @config
      * @var bool
      */
-    private static  $wrap_tables = true;
+    private static $wrap_tables = true;
 
     /**
      * defines the available table styles. thes can be triggered by adding

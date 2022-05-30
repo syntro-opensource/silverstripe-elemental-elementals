@@ -161,5 +161,4 @@ class Image extends BaseElement
         }
         return $blockSchema;
     }
-
 }

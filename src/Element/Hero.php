@@ -147,9 +147,8 @@ class Hero extends ElementContent
     public function getSummary()
     {
         if ($this->ShowContent) {
-            return '"'.parent::getSummary().'" + '.$this->Buttons()->count().' Buttons';
+            return '"' . parent::getSummary() . '" + ' . $this->Buttons()->count() . ' Buttons';
         }
-        return $this->Buttons()->count().' Buttons';
+        return $this->Buttons()->count() . ' Buttons';
     }
-
 }

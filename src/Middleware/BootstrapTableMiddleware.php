@@ -8,15 +8,23 @@ use Syntro\SilverstripeElementalElementals\BootstrapConfig;
 
 /**
  * Wraps <table> tags in a table-responsive div.
+ * @author Matthias Leutenegger
  */
 class BootstrapTableMiddleware implements HTTPMiddleware
 {
+
+    /**
+     * process - does the wrapping if configured
+     *
+     * @param  HTTPRequest $request  the initial request
+     * @param  callable    $delegate the delegate function
+     * @return HTTPResponse
+     */
     public function process(HTTPRequest $request, callable $delegate)
     {
         $response = $delegate($request);
 
-        if (
-            $request->routeParams()['Controller'] != 'SilverStripe\Admin\AdminRootController'
+        if ($request->routeParams()['Controller'] != 'SilverStripe\Admin\AdminRootController'
             && $request->routeParams()['Controller'] != '%$SilverStripe\GraphQL\Controller.admin'
             && strpos(strtolower($response->getHeader('content-type')), 'text/html') !== false
             && BootstrapConfig::addResponsiveTables()
