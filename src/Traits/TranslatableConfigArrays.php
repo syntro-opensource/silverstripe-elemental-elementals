@@ -23,7 +23,7 @@ trait TranslatableConfigArrays
     {
         $values = Config::inst()->get(static::class, $configName);
         if (!is_array($values)) {
-            throw new \Exception("Config value '$configName' on ${__CLASS__} is not an array.", 1);
+            throw new \Exception("Config value '$configName' on " . static::class . "} is not an array.", 1);
         }
         $translatedValues = [];
         foreach ($values as $key => $value) {

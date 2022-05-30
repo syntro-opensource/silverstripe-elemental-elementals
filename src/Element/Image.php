@@ -53,6 +53,10 @@ class Image extends BaseElement
      */
     private static $inline_editable = true;
 
+    /**
+     * @config
+     * @var bool
+     */
     private static $allow_title_customization = false;
 
     /**
@@ -153,7 +157,7 @@ class Image extends BaseElement
     {
         $blockSchema = parent::provideBlockSchema();
         $blockSchema['content'] = static::getTranslatedConfigArrayOption('aspectratio_options', $this->Spacing);
-        /** @var Image|null */
+        /** @var SSImage|null */
         $image = $this->Image();
         if ($image && $image->exists() && $image->getIsImage()) {
             $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();

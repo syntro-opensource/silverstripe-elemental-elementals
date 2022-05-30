@@ -51,6 +51,10 @@ class Spacer extends BaseElement
      */
     private static $inline_editable = true;
 
+    /**
+     * @config
+     * @var bool
+     */
     private static $allow_title_customization = false;
 
     /**

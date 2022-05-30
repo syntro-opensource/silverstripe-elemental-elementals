@@ -7,6 +7,7 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\TabSet;
 use SilverStripe\Forms\Tab;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\GridField\GridField;
 use DNADesign\Elemental\Models\ElementContent;
 use Syntro\SilverStripeElementalBaseitem\Forms\GridFieldConfig_ElementalChildren;
 use Syntro\SilverstripeElementalElementals\Model\Button;
@@ -82,6 +83,7 @@ class Hero extends ElementContent
     /**
      * Relationship version ownership
      *
+     * @config
      * @var array
      */
     private static $owns = [
@@ -106,7 +108,7 @@ class Hero extends ElementContent
             )
         );
         $contentField = $fields->fieldByName('Root.Main.HTML');
-        $contentField->hideUnless('ShowContent')->isChecked();
+        $contentField->hideUnless('ShowContent')->isChecked(); // @phpstan-ignore-line
         if ($this->ID) {
             /** @var GridField $griditems */
             $griditems = $fields->fieldByName('Root.Buttons.Buttons');
