@@ -21,16 +21,19 @@ class Hero extends ElementContent
 
     /**
      * Defines the database table name
+     * @config
      *  @var string
      */
     private static $table_name = 'ElementHero';
 
     /**
+     * @config
      * @var string
      */
     private static $icon = 'font-icon-block-promo-2';
 
     /**
+     * @config
      * Singular name for CMS
      *  @var string
      */
@@ -38,11 +41,13 @@ class Hero extends ElementContent
 
     /**
      * Plural name for CMS
+     * @config
      *  @var string
      */
     private static $plural_name = 'Heroes';
 
     /**
+     * @config
      * @var bool
      */
     private static $inline_editable = false;
@@ -58,6 +63,7 @@ class Hero extends ElementContent
 
     /**
      * Database fields
+     * @config
      * @var array
      */
     private static $db = [
@@ -66,6 +72,7 @@ class Hero extends ElementContent
 
     /**
      * Has_many relationship
+     * @config
      * @var array
      */
     private static $has_many = [
@@ -74,6 +81,7 @@ class Hero extends ElementContent
 
     /**
      * Relationship version ownership
+     *
      * @var array
      */
     private static $owns = [

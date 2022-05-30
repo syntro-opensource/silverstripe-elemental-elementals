@@ -20,28 +20,33 @@ class Spacer extends BaseElement
 
     /**
      * Defines the database table name
+     * @config
      *  @var string
      */
     private static $table_name = 'ElementSpacer';
 
     /**
+    * @config
      * @var string
      */
     private static $icon = 'font-icon-caret-up-down';
 
     /**
      * Singular name for CMS
+     * @config
      *  @var string
      */
     private static $singular_name = 'Spacer';
 
     /**
      * Plural name for CMS
+     * @config
      *  @var string
      */
     private static $plural_name = 'Spacer';
 
     /**
+    * @config
      * @var bool
      */
     private static $inline_editable = true;
@@ -72,6 +77,7 @@ class Spacer extends BaseElement
 
     /**
      * Database fields
+     * @config
      * @var array
      */
     private static $db = [

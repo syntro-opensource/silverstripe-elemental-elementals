@@ -36,6 +36,7 @@ class SpacingExtension extends DataExtension
 {
     /**
      * Database fields
+     * @config
      * @var array
      */
     private static $db = [
@@ -45,6 +46,7 @@ class SpacingExtension extends DataExtension
 
     /**
      * Add default values to database
+     * @config
      *  @var array
      */
     private static $defaults = [
