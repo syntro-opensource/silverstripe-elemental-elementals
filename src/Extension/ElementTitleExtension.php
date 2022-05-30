@@ -22,6 +22,7 @@ class ElementTitleExtension extends DataExtension
 {
     /**
      * Database fields
+     * @config
      * @var array
      */
     private static $db = [
@@ -32,6 +33,7 @@ class ElementTitleExtension extends DataExtension
 
     /**
      * Add default values to database
+     * @config
      *  @var array
      */
     private static $defaults = [
@@ -74,7 +76,7 @@ class ElementTitleExtension extends DataExtension
                     _t(__CLASS__ . '.TIITLEEXTRACLASSTITLE', 'Title Extra Classes')
                 )
             ];
-            $fields->insertAfter('ExtraClass', FieldGroup::create( _t(__CLASS__ . '.TITLESETTINGS', 'Title Settings'), $titleFields));
+            $fields->insertAfter('ExtraClass', FieldGroup::create(_t(__CLASS__ . '.TITLESETTINGS', 'Title Settings'), $titleFields));
         }
         return $fields;
     }

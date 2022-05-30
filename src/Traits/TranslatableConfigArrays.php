@@ -1,6 +1,7 @@
 <?php
 
 namespace Syntro\SilverstripeElementalElementals\Traits;
+
 use SilverStripe\Core\Config\Config;
 
 /**
@@ -22,11 +23,11 @@ trait TranslatableConfigArrays
     {
         $values = Config::inst()->get(static::class, $configName);
         if (!is_array($values)) {
-            throw new \Exception("Config value '$configName' on ${__CLASS__} is not an array.", 1);
+            throw new \Exception("Config value '$configName' on " . static::class . "} is not an array.", 1);
         }
         $translatedValues = [];
         foreach ($values as $key => $value) {
-            $translatedValues[$key] = _t(static::class.'.'.$configName.':'.$key, $value);
+            $translatedValues[$key] = _t(static::class . '.' . $configName . ':' . $key, $value);
         }
 
         return $translatedValues;
@@ -45,6 +46,6 @@ trait TranslatableConfigArrays
         if (!isset($array[$optionName])) {
             return null;
         }
-        return _t(static::class.'.'.$configName.':'.$optionName, $array[$optionName]);
+        return _t(static::class . '.' . $configName . ':' . $optionName, $array[$optionName]);
     }
 }

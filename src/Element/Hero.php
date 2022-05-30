@@ -7,6 +7,7 @@ use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\TabSet;
 use SilverStripe\Forms\Tab;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\GridField\GridField;
 use DNADesign\Elemental\Models\ElementContent;
 use Syntro\SilverStripeElementalBaseitem\Forms\GridFieldConfig_ElementalChildren;
 use Syntro\SilverstripeElementalElementals\Model\Button;
@@ -21,16 +22,19 @@ class Hero extends ElementContent
 
     /**
      * Defines the database table name
+     * @config
      *  @var string
      */
     private static $table_name = 'ElementHero';
 
     /**
+     * @config
      * @var string
      */
     private static $icon = 'font-icon-block-promo-2';
 
     /**
+     * @config
      * Singular name for CMS
      *  @var string
      */
@@ -38,11 +42,13 @@ class Hero extends ElementContent
 
     /**
      * Plural name for CMS
+     * @config
      *  @var string
      */
     private static $plural_name = 'Heroes';
 
     /**
+     * @config
      * @var bool
      */
     private static $inline_editable = false;
@@ -58,6 +64,7 @@ class Hero extends ElementContent
 
     /**
      * Database fields
+     * @config
      * @var array
      */
     private static $db = [
@@ -66,6 +73,7 @@ class Hero extends ElementContent
 
     /**
      * Has_many relationship
+     * @config
      * @var array
      */
     private static $has_many = [
@@ -74,6 +82,8 @@ class Hero extends ElementContent
 
     /**
      * Relationship version ownership
+     *
+     * @config
      * @var array
      */
     private static $owns = [
@@ -98,7 +108,7 @@ class Hero extends ElementContent
             )
         );
         $contentField = $fields->fieldByName('Root.Main.HTML');
-        $contentField->hideUnless('ShowContent')->isChecked();
+        $contentField->hideUnless('ShowContent')->isChecked(); // @phpstan-ignore-line
         if ($this->ID) {
             /** @var GridField $griditems */
             $griditems = $fields->fieldByName('Root.Buttons.Buttons');
@@ -139,9 +149,8 @@ class Hero extends ElementContent
     public function getSummary()
     {
         if ($this->ShowContent) {
-            return '"'.parent::getSummary().'" + '.$this->Buttons()->count().' Buttons';
+            return '"' . parent::getSummary() . '" + ' . $this->Buttons()->count() . ' Buttons';
         }
-        return $this->Buttons()->count().' Buttons';
+        return $this->Buttons()->count() . ' Buttons';
     }
-
 }

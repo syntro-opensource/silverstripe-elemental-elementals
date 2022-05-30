@@ -20,6 +20,7 @@ class Button extends BaseItem
     use TranslatableConfigArrays;
     /**
      * Defines the database table name
+     * @config
      *  @var string
      */
     private static $table_name = 'ElementalsButton';
@@ -28,19 +29,21 @@ class Button extends BaseItem
      * @config
      * @var array
      */
-     private static $styles = [];
+    private static $styles = [];
 
 
      /**
       * Database fields
+      * @config
       * @var array
       */
-     private static $db = [
+    private static $db = [
          'Style' => 'Varchar',
      ];
 
     /**
      * Has_one relationship
+     * @config
      * @var array
      */
     private static $has_one = [
@@ -50,6 +53,7 @@ class Button extends BaseItem
 
     /**
      * Relationship version ownership
+     * @config
      * @var array
      */
     private static $owns = [
@@ -59,6 +63,7 @@ class Button extends BaseItem
     /**
      * Defines summary fields commonly used in table columns
      * as a quick overview of the data for this dataobject
+     * @config
      * @var array
      */
     private static $summary_fields = [

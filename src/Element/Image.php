@@ -22,32 +22,41 @@ class Image extends BaseElement
 
     /**
      * Defines the database table name
+     * @config
      *  @var string
      */
     private static $table_name = 'ElementImage';
 
     /**
+    * @config
      * @var string
      */
     private static $icon = 'font-icon-block-file';
 
     /**
      * Singular name for CMS
+     * @config
      *  @var string
      */
     private static $singular_name = 'Image';
 
     /**
      * Plural name for CMS
+     * @config
      *  @var string
      */
     private static $plural_name = 'Images';
 
     /**
+    * @config
      * @var bool
      */
     private static $inline_editable = true;
 
+    /**
+     * @config
+     * @var bool
+     */
     private static $allow_title_customization = false;
 
     /**
@@ -73,6 +82,7 @@ class Image extends BaseElement
 
     /**
      * Database fields
+     * @config
      * @var array
      */
     private static $db = [
@@ -81,6 +91,7 @@ class Image extends BaseElement
 
     /**
      * Has_one relationship
+     * @config
      * @var array
      */
     private static $has_one = [
@@ -89,6 +100,7 @@ class Image extends BaseElement
 
     /**
      * Relationship version ownership
+     * @config
      * @var array
      */
     private static $owns = [
@@ -145,7 +157,7 @@ class Image extends BaseElement
     {
         $blockSchema = parent::provideBlockSchema();
         $blockSchema['content'] = static::getTranslatedConfigArrayOption('aspectratio_options', $this->Spacing);
-        /** @var Image|null */
+        /** @var SSImage|null */
         $image = $this->Image();
         if ($image && $image->exists() && $image->getIsImage()) {
             $blockSchema['fileURL'] = $image->CMSThumbnail()->getURL();
@@ -153,5 +165,4 @@ class Image extends BaseElement
         }
         return $blockSchema;
     }
-
 }
