@@ -4,8 +4,8 @@
 [![codecov](https://codecov.io/gh/syntro-opensource/silverstripe-elemental-elementals/branch/master/graph/badge.svg)](https://codecov.io/gh/syntro-opensource/silverstripe-elemental-elementals)
 ![Dependabot](https://img.shields.io/badge/dependabot-active-brightgreen?logo=dependabot)
 [![phpstan](https://img.shields.io/badge/PHPStan-enabled-success)](https://github.com/phpstan/phpstan)
-[![composer](https://img.shields.io/packagist/dt/syntro/silverstripe-bootstrap-forms?color=success&logo=composer)](https://packagist.org/packages/syntro/silverstripe-bootstrap-forms)
-[![Packagist Version](https://img.shields.io/packagist/v/syntro/silverstripe-bootstrap-forms?label=stable&logo=composer)](https://packagist.org/packages/syntro/silverstripe-bootstrap-forms)
+[![composer](https://img.shields.io/packagist/dt/syntro/silverstripe-elemental-elementals?color=success&logo=composer)](https://packagist.org/packages/syntro/silverstripe-elemental-elementals)
+[![Packagist Version](https://img.shields.io/packagist/v/syntro/silverstripe-elemental-elementals?label=stable&logo=composer)](https://packagist.org/packages/syntro/silverstripe-elemental-elementals)
 
 ## Introduction
 Provides a sensible default setup and more for Silverstripe projects built with
