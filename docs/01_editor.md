@@ -1,11 +1,11 @@
 # Bootstrap-Specific HTMLEditor Config
 
 Bootstrap comes with some utility classes for styling content on the fly.
-While most formatting can be done easily enough in the default editor config,
+While most formatting can be done easy enough in the default editor config,
 there are some usecases where additional options are required.
 
 ## Text Utilities
-Bootstrap comes with class bassed text utilities, that allow you to change the
+Bootstrap comes with class based text utilities, that allow you to change the
 visual appearance of text without changing the tag. These classes are made available
 to the editor in the formats dropdown. You can customize the available formats
 via yaml config:
