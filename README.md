@@ -26,7 +26,9 @@ the configuration of
 * title extra classes
 
 These can be accessed in templates using `$TitleTag`, `$TitleAlignment` and
-`$TitleExtraClasses`. If you want to quickly drop in support, you can use our
+`$TitleExtraClasses`. `$TitleAlignment` follows the bootstrap conventions and
+renders as `start`, `center`, `end`.
+If you want to quickly drop in support, you can use our
 preset to render the title as follows:
 ```
 <% if $ShowTitle %>
@@ -43,6 +45,9 @@ YourElement:
 
 ### Editor and Content
 See [📚 Editor configuration](docs/01_editor.md).
+
+### Spacing Between Elements
+See [📚 Spacing](docs/02_spacing.md).
 
 ## Contributing
 See [CONTRIBUTION.md](CONTRIBUTION.md) for mor info.
