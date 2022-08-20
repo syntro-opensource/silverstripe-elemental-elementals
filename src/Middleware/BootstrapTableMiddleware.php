@@ -30,8 +30,8 @@ class BootstrapTableMiddleware implements HTTPMiddleware
             && BootstrapConfig::addResponsiveTables()
         ) {
             $body = $response->getBody();
-            $body = str_replace('<table', '<div class="table-responsive"><table', $body);
-            $body = str_replace('</table>', '</table></div>', $body);
+            $body = str_replace('<table', '<div class="table-responsive"><table', $body ?: '');
+            $body = str_replace('</table>', '</table></div>', $body ?: '');
             $response->setBody($body);
         }
 
