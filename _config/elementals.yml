@@ -14,3 +14,12 @@ DNADesign\Elemental\Models\BaseElement:
     md: Medium spacing
     lg: Large spacing
   allow_title_customization: true
+
+---
+Name: silverstripe-elemental-elementals-priority
+Before:
+  - 'dnadesign/silverstripe-elemental'
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  module_priority:
+    - syntro/silverstripe-elemental-elementals
