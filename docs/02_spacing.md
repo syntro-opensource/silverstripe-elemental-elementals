@@ -58,4 +58,37 @@ The same can be done for a specific element if needed.
 
 This module provides a spacing element, which allows the content editor
 to insert space between two other elements or at the start or the end of the
-content.
+content. The default spacing options are as follows:
+
+```yml
+Syntro\SilverstripeElementalElementals\Element\Spacer:
+  spacing_options:
+    p-1: Very small
+    p-2: Small
+    p-3: Medium
+    p-4: Large
+    p-5: Very large
+```
+You can Access the current spacing option in the template by using `$Spacing`.
+
+Resetting the default options can be done analogous to the spacing example:
+
+```yml
+---
+Name: elementals-spacer-reset
+After:
+  - syntro/silverstripe-elemental-elementals
+---
+Syntro\SilverstripeElementalElementals\Element\Spacer:
+  spacing_options: null
+
+---
+Name: elementals-spacer-custom
+After:
+  - elementals-spacer-reset
+---
+Syntro\SilverstripeElementalElementals\Element\Spacer:
+  spacing_options:
+    small: Small
+    large: Large
+```

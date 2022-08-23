@@ -103,9 +103,22 @@ class Spacer extends BaseElement
                 static::getTranslatedConfigArray('spacing_options')
             ),
         );
+        $fields->removeByName([
+            'Title'
+        ]);
         return $fields;
     }
 
+
+    /**
+     * returns a title for this block
+     *
+     * @return string
+     */
+    public function getTitle()
+    {
+        return _t(__CLASS__ . '.BlockType', 'Spacer');
+    }
 
     /**
      * getType
@@ -123,7 +136,8 @@ class Spacer extends BaseElement
     protected function provideBlockSchema()
     {
         $blockSchema = parent::provideBlockSchema();
-        $blockSchema['content'] = static::getTranslatedConfigArrayOption('spacing_options', $this->Spacing);
+        $spacingOption = static::getTranslatedConfigArrayOption('spacing_options', $this->Spacing);
+        $blockSchema['content'] = _t(__CLASS__ . '.Summary', '{selected} spacing.', ['selected' => $spacingOption]);
         return $blockSchema;
     }
 }
