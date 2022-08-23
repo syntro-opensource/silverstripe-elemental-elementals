@@ -15,6 +15,10 @@ DNADesign\Elemental\Models\BaseElement:
     lg: Large spacing
   allow_title_customization: true
 
+Syntro\SilverstripeElementalElementals\Element\Spacer:
+  spacing_before: null
+  spacing_after: null
+
 ---
 Name: silverstripe-elemental-elementals-priority
 Before:
