@@ -46,7 +46,7 @@ de:
   # ***********
   Syntro\SilverstripeElementalElementals\Element\Spacer:
     BlockType: Abstand
-    Summary: {selected}
+    Summary: "{selected}"
     spacing_options:p-1: Sehr klein
     spacing_options:p-2: Klein
     spacing_options:p-3: Mittel
